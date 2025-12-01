@@ -136,67 +136,13 @@ export default function HeroCarouselSection() {
         </div>
 
         {/* Bottom Cards + Navigation */}
-        <div className="mt-auto">
-          {/* Navigation Dots */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-            className="flex justify-center lg:justify-start items-center gap-4 mb-8"
-          >
-            {/* LEFT ARROW */}
-            <button
-              onClick={() =>
-                setCurrentBg((prev) =>
-                  prev > 0 ? prev - 1 : backgrounds.length - 1
-                )
-              }
-              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm 
-                          flex items-center justify-center 
-                          hover:bg-yellow-400 hover:text-gray-900 
-                          transition-all duration-300 group"
-            >
-              <FaArrowRight className="w-4 h-4 -rotate-180 text-white group-hover:text-gray-900" />
-            </button>
-
-            {/* DOTS */}
-            <div className="flex items-center gap-3">
-              {backgrounds.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentBg(i)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 
-        ${
-          i === currentBg
-            ? "bg-yellow-400" // highlighted
-            : "bg-white/40 hover:bg-white/70"
-        }`}
-                />
-              ))}
-            </div>
-
-            {/* RIGHT ARROW */}
-            <button
-              onClick={() =>
-                setCurrentBg((prev) =>
-                  prev < backgrounds.length - 1 ? prev + 1 : 0
-                )
-              }
-              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm 
-    flex items-center justify-center 
-    hover:bg-yellow-400 hover:text-gray-900 
-    transition-all duration-300 group"
-            >
-              <FaArrowRight className="w-4 h-4 text-white group-hover:text-gray-900" />
-            </button>
-          </motion.div>
-
+        <div className="mt-5">
           {/* Info Cards */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.7 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto lg:mx-0"
+            transition={{ delay: 0.7, duration: 0.7 }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8"
           >
             {/* Proven Record */}
             <motion.div
@@ -239,6 +185,60 @@ export default function HeroCarouselSection() {
                 drive growth.
               </p>
             </motion.div>
+          </motion.div>
+
+          {/* Navigation Dots */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}
+            className="flex justify-center items-center gap-4"
+          >
+            {/* LEFT ARROW */}
+            <button
+              onClick={() =>
+                setCurrentBg((prev) =>
+                  prev > 0 ? prev - 1 : backgrounds.length - 1
+                )
+              }
+              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm 
+                 flex items-center justify-center 
+                 hover:bg-yellow-400 hover:text-gray-900 
+                 transition-all duration-300 group"
+            >
+              <FaArrowRight className="w-4 h-4 -rotate-180 text-white group-hover:text-gray-900" />
+            </button>
+
+            {/* DOTS */}
+            <div className="flex items-center gap-3">
+              {backgrounds.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentBg(i)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 
+            ${
+              i === currentBg
+                ? "bg-yellow-400" // highlighted
+                : "bg-white/40 hover:bg-white/70"
+            }`}
+                />
+              ))}
+            </div>
+
+            {/* RIGHT ARROW */}
+            <button
+              onClick={() =>
+                setCurrentBg((prev) =>
+                  prev < backgrounds.length - 1 ? prev + 1 : 0
+                )
+              }
+              className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm 
+                 flex items-center justify-center 
+                 hover:bg-yellow-400 hover:text-gray-900 
+                 transition-all duration-300 group"
+            >
+              <FaArrowRight className="w-4 h-4 text-white group-hover:text-gray-900" />
+            </button>
           </motion.div>
         </div>
       </div>

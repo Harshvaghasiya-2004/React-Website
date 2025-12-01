@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import { motion } from "framer-motion";
@@ -15,19 +15,18 @@ import {
   HiCheckCircle,
 } from "react-icons/hi";
 
-import {
-  FiTwitter,
-  FiLinkedin,
-  FiInstagram,
-  FiFacebook,
-} from "react-icons/fi";
+import { FiTwitter, FiLinkedin, FiInstagram, FiFacebook } from "react-icons/fi";
 
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 export default function Contact() {
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" },
+    },
   };
 
   const stagger = {
@@ -44,13 +43,10 @@ export default function Contact() {
     height: "100%",
   };
 
-  const center = { lat: 23.0400, lng: 72.6600 };
-
-
-
+  const center = { lat: 23.04, lng: 72.66 };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
+    <div className=" bg-gray-900 text-white overflow-hidden">
       <Navbar />
 
       <ContactPage />
@@ -230,16 +226,28 @@ export default function Contact() {
             viewport={{ once: true }}
             className="flex gap-4"
           >
-            <a href="#" className="text-gray-900 hover:text-yellow-400 transition">
+            <a
+              href="#"
+              className="text-gray-900 hover:text-yellow-400 transition"
+            >
               <FiTwitter className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-yellow-400 transition">
+            <a
+              href="#"
+              className="text-gray-900 hover:text-yellow-400 transition"
+            >
               <FiLinkedin className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-yellow-400 transition">
+            <a
+              href="#"
+              className="text-gray-900 hover:text-yellow-400 transition"
+            >
               <FiInstagram className="w-6 h-6" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-yellow-400 transition">
+            <a
+              href="#"
+              className="text-gray-900 hover:text-yellow-400 transition"
+            >
               <FiFacebook className="w-6 h-6" />
             </a>
           </motion.div>
